@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  application-k8s.properties: |-
+{{ .Files.Get "application-k8s.properties" | indent 4}}
